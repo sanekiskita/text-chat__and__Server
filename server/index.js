@@ -148,9 +148,9 @@ io.on('connection', (socket) => {
   /**
 * прослушка при отправке
 */
-  socket.on('ROOM:NEW_MESSAGE', ({ roomId, userName, text }) => {
-    rooms.get(+roomId).get('message').unshift({ userName, text });
-    socket.broadcast.to(+roomId).emit('ROOM:ADD_MESSAGE', { userName, text });
+  socket.on('ROOM:NEW_MESSAGE', ({ roomId, userName, text,date }) => {
+    rooms.get(+roomId).get('message').unshift({ userName, text,date });
+    socket.broadcast.to(+roomId).emit('ROOM:ADD_MESSAGE', { userName, text,date });
 
   });
 
