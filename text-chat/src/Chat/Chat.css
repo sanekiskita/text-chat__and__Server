@@ -1,0 +1,81 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+.Container__LeftContent {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Container__Input {
+  padding: 3px 10px;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.Message__input {
+  padding: 0 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%;
+}
+.Message__button {
+  margin-left: 10px;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.Message__button:before {
+  content: "\f197";
+  font-family: FontAwesome;
+  font-size: 25px;
+}
+.Baground{
+  background-image: url('../img/message__fon.jpg');
+  background-repeat: repeat;
+  min-height: 100%;
+  min-height: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.Container__Message {
+    background-color: #e0e0e0;
+    height: 100%;
+    overflow: auto;
+  }
+  .My {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .Message {
+    padding: 5px 0;
+  }
+  .Message__Text{
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: max-content;
+  }
+  .Message__Auth{
+    padding-top: 5px;
+    font-size: 10px;
+    text-align: end;
+  }
+  .Users {
+    background-color: #e0e0e0;
+}
+
+  .Users ul{
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: auto;
+  }
+
+  .Users li{
+    padding-left: 5px;
+}
