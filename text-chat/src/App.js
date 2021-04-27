@@ -18,7 +18,7 @@ function App() {
 		myRooms: [],
 	});
 
-	const [humburger, setHumburger] = React.useState(false);
+	const [humburger, setHumburger] = React.useState(true);
 
 	/**
 	 * функция проходит авторизацию и получает данные с сервера
