@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import socket from '../socket';
+
+
+import { Container, Row,Col,ListGroup,Button  } from 'react-bootstrap';
 import './InfoPanel.css';
 
 //{userName,myRooms,uppdateRoom,roomId}
@@ -42,30 +45,39 @@ class InfoPanel extends React.Component{
  
 render(){
     return(
-        <div className="Container__RightContent">
+        <div className="Container__RightContent" style={this.props.humburger?{transform: 'translateX(100%)'}:{transform: 'translateX(0%)'}}>
             <div className="User__Info">
             <p> Здравствуйте {this.props.userName}</p>
             </div>
             <div className="Rooms">
+            <ListGroup>
             {this.props.myRooms.map((element,index)=>{
                 return(
-                    <div onClick={(e)=>{this.joinRoom(e.currentTarget.children[1].children[0].textContent)}} key={index} className="Rooms__item">
+                    <ListGroup.Item action  variant="primary" onClick={(e)=>{this.joinRoom(e.currentTarget.children[1].children[0].textContent)}} key={index}>
                         <p>{element.name}</p>
                         <p>id:<span>{element.id}</span></p>
-                    </div>
-                )
+                  </ListGroup.Item>
+                );
             })}
+            </ListGroup>
             </div>
+
             <div className="Rooms__padding">
             <div className="Rooms__Join">
+
                 <div className="Rooms__Input">
-                    <p>id room:</p>
-                    <input value={this.state.addNewRoom} onChange={(e)=>{this.setState({addNewRoom:e.target.value})}}></input>
+                <Container>
+                    <Row md="auto">
+                     <Col lg="auto" md={12}><p>id room:</p></Col>
+                     <Col><input type="number" value={this.state.addNewRoom} onChange={(e)=>{this.setState({addNewRoom:e.target.value})}}></input>
+                    </Col>
+                    </Row>
+                </Container>
                 </div>
-                <button onClick={()=>{this.joinRoom()}}>Присоединиться</button>
+                <Button variant="primary" onClick={()=>{this.joinRoom()}}>Присоединиться</Button>
             </div>
             <div className="Rooms__Create">
-            <button onClick={this.newRoom}>создать новую комнату</button>
+            <Button variant="primary" onClick={this.newRoom}>создать новую комнату</Button>
             </div>
             </div>
         </div>

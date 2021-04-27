@@ -19,6 +19,8 @@ function App() {
     myRooms:[]
   });
 
+  const [humburger,setHumburger]=React.useState(false);
+  
   /**
  * функция проходит авторизацию и получает данные с сервера
  *
@@ -101,8 +103,8 @@ function App() {
 
   return (
      <div className="Container">
-        <Chat {...state}/>
-        <InfoPanel {...state} uppdateRoom={uppdateRoom}  />
+        <Chat {...state} humburger={humburger} setHumburger={setHumburger}/>
+        <InfoPanel {...state} uppdateRoom={uppdateRoom} humburger={humburger} />
       {!state.isAuth && <Auth onLogin={onLogin}/>}
      </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { Button } from 'react-bootstrap';
+
 class Auth extends React.Component {
 
   constructor(props) {
@@ -23,13 +25,11 @@ class Auth extends React.Component {
     let userName = this.state.userName
     try{
     const { data: roomId } = await axios.post('http://localhost:5001/user', { userName });
+    this.setState({ ButtonText: "Вход" });
     this.props.onLogin({ userName, roomId });
     }catch(e){
       throw Error("Сервер не отвечате");
-    }finally{
-      this.setState({ ButtonText: "Вход" });
     }
-    
   }
 
   render() {
@@ -37,14 +37,14 @@ class Auth extends React.Component {
       <div className="fon">
         <div className="Login">
           <p>Ваше имя</p>
-          <br />
           <input className="Login__input" type="Login" value={this.state.userName} onChange={e => { this.setState({ userName: e.target.value }); this.setState({ Lbutton: !!e.target.value !== false ? true : false }); }}></input>
           <br />
-          <button onClick={this.authorization} disabled={!this.state.Lbutton} className={`Login__button  ${this.state.Lbutton === true ? '' : '--grey'}`} >{this.state.ButtonText}</button>
+          <Button block variant="success" onClick={this.authorization} disabled={!this.state.Lbutton} className="w-50">
+            {this.state.ButtonText}
+          </Button>
         </div>
       </div>);
   }
 
 }
-
 export default Auth;

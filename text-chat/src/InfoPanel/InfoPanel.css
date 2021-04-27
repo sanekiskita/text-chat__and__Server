@@ -1,68 +1,83 @@
-.Container__RightContent{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+.Container__RightContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-left: 5px;
 }
-.Rooms{
-    height: 100%;
-    margin: 10px 0;
-    overflow: auto;
-}
-.Rooms__item{
-    cursor: pointer;
-    padding: 7px 10px 7px 0px;
-    margin: 0 0 0 10px;
-    border-top: 1px solid black;
+.User__Info p {
+  margin-bottom: 0;
+  text-decoration: underline;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.Rooms__item:first-child(){
-    padding-bottom: 5px;
+.Rooms {
+  height: 100%;
+  margin: 10px 0;
+  overflow: auto;
+}
+.Rooms p {
+  margin-bottom: 0;
 }
 
-.Rooms__Join{
-    display: flex;
-    flex-direction: column;
-}
-.Rooms__Input{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    padding-bottom: 10px;
-
-
+.Rooms__item:first-child() {
+  padding-bottom: 5px;
 }
 
-.Rooms__Input input{
-    margin-top: 5px;
-    width: 50%;
-    padding: 0 10px;
-    border: 1px solid black;
-    border-radius: 10px;
+.Rooms__Join {
+  display: flex;
+  flex-direction: column;
+}
+.Rooms__Input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.list-group-item {
+  margin-bottom: 10px;
 }
 
-.Rooms__Join button{
-    color: white;
-    font-size: 15px;
-    background: #3900ff;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.Rooms__Input p {
+  margin-bottom: 0;
+  text-align: center;
+}
+.Rooms__Input .col {
+  height: max-content;
 }
 
-.Rooms__Create button{
-    display: block;
-    width: 100%;
-    color: white;
-    font-size: 15px;
-    background: #3900ff;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
+.Rooms__Input input {
+  width: 100%;
+  padding: 0 10px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
-.Rooms__padding{
-    padding: 0 10px;
+
+.Rooms__Join button {
+  color: white;
+  font-size: 15px;
+  background: #3900ff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Rooms__Create button {
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  background: #3900ff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+.Rooms__padding {
+  padding: 0 10px;
 }

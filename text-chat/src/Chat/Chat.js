@@ -26,7 +26,6 @@ class Chat extends React.Component{
         });
         this.setState({valueMessage:''});
         this.props.message.push({'userName':this.props.userName,'text':this.state.valueMessage,'date':new Date().toLocaleString()})
-        console.log(new Date().toLocaleString());
     }
     
     }
@@ -41,10 +40,15 @@ class Chat extends React.Component{
         return (
             <div className="Container__LeftContent">
             <div className="Users">
+                <div>
                <p>Название команты: {this.props.roomSetting.name}   людей онлайн: {this.props.usersInRomm.length}</p>
                 <ul>
                     {this.props.usersInRomm.map((user,index)=>(<li key={user+index}>{user},</li>))}
                 </ul>
+                </div>
+                <div className="humburger">
+                    <div onClick={()=>{this.props.setHumburger(!this.props.humburger)}} className={this.props.humburger?'open':'close'}></div>  
+                </div>
             </div>
             <div className="Container__Message">
             <div className="Baground">
